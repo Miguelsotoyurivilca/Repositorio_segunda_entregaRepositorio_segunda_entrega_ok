@@ -1,0 +1,24 @@
+/* navbar hecho con bootstrap*/
+.navbar {
+    background-color: #f8f9fa; /* Set background color */
+    border-bottom: 1px solid #dee2e6; /* Add a bottom border */
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #007bff; /* Set brand color */
+  }
+  
+  .navbar-toggler {
+    border-color: #dee2e6; /* Set border color */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #333; /* Set link color */
+    font-weight: 500; /* Set font weight */
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #007bff; /* Set active link color */
+    font-weight: bold;
+  }

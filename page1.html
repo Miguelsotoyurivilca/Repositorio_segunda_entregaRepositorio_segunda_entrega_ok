@@ -2,127 +2,216 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vietnamese Eating House - Cafe Hanoi</title>
+    <title>Cafe Hanoi</title>
+    <meta name="description" content="Cafe Hanoi Vietnamese">
+    <meta name="keywords" content="Cafe, Hanoi, Vietnamese">
+    <meta property="og:title" content="Pagina de cafe">
+    <meta property="og:description" content="Pagina de cafe">
+    <meta property="og:image" content="link a imagen">
+    <meta property="og:url" content="https://cafehanoi.com">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" href="estilos.css" as="style">
+    <link rel="stylesheet" href="estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <!-- iconos bootstrap -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head> 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">barhanoi</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"   
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg" style="background-color: var(--footer-beige);">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            barhanoi
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservations.html">Reservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="page1.html">página</a>
-          </li>
-         
-          </ul>
-      </div>
-    </div>   
+<!--API RECETAS -->
+<section class="cocktails-section">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger bg-gradient p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="page1_favoritos.html">Mis Favoritos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  </nav>
-    <div class="page-container">
-      <!--
-        <header class="header">HOME</header>
-      -->
-        <main>
-            <section class="hero-section">
-          
-                <img src="img/2.jpg" 
-                     alt="Vietnamese street scene" 
-                     class="hero-image">
-                <div class="hero-content">
-                    <h1 class="hero-title">Vietnamese<br>Drinking<br>House</h1>
-                    <div class="opening-hours">
-                        Opening Hours:<br>
-                        Monday to Friday - 12pm - 3pm<br>
-                        Dinner service daily from 5pm to close
+    <main class="mt-5 container-lg">
+        <h2 class="text-center fs-1">Inicio</h2>
+
+        <div class="d-md-flex justify-content-md-center mt-5">
+            <form class="card col-md-8 bg-light p-5">
+                <div>
+                    <label for="categorias" class="form-label">Categoría</label>
+                    <select id="categorias" class="form-select">
+                        <option selected>-- Seleccione --</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        
+        <div id="resultado" class="mt-5">
+            <!-- Results will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+  <!-- Cocktail Details Modal -->
+<div class="modal fade" id="cocktailModal" tabindex="-1" aria-labelledby="cocktailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-white"> <!-- Agregado bg-white aquí -->
+            <div class="modal-header">
+                <h5 class="modal-title text-dark" id="cocktailModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-white"> <!-- Agregado bg-white aquí también -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <img id="modal-cocktail-img" class="img-fluid rounded" alt="Cocktail">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-dark">Ingredientes</h3>
+                        <ul id="modal-ingredients" class="list-unstyled text-dark"></ul>
+                        <h3 class="text-dark">Instrucciones</h3>
+                        <p id="modal-instructions" class="text-dark"></p>
                     </div>
                 </div>
-                
-            </section>
+            </div>
+            <div class="modal-footer bg-white"> <!-- Agregado bg-white aquí también -->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" id="guardarFavorito">Guardar Favorito</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <section class="content-grid">
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END API RECETAS -->
+
+ <!-- Content Grid Section -->
+ <section class="content-grid">
               
-              <div class="title-section">
-                  <span class="star">★</span>
-                  INSPIRED<br>
-                  BY THE<br>
-                  FADED<br>
-                  ELEGANCE<br>
-                  OF<br>
-                  HANOI'S<br>
-                  OLD<br>
-                  QUARTER
-              </div>
-  
-              <div class="description-section">
-                  <p>Bar Hanoi is a modern Vietnamese restaurant housed within a historic warehouse space in Britomart, the city's oldest commercial district.</p>
-                  <p>The restaurant reflects our passion and respect for Vietnamese food and culture.</p>
-                  <p>Our menu offers authentic Hanoian street food that has made the city world famous, and other more contemporary dishes that blend traditional Vietnamese cooking techniques with the best of New Zealand produce.</p>
-                  <p>We are very careful to choose ingredients that have been sourced with a deep respect for the environment.</p>
-              </div>
-          </section>
-            
-          <img src="img/3.jpg" 
-          alt="Restaurant interior" 
-          class="restaurant-photo">
+    <div class="title-section">
+        <span class="star">★</span>
+        INSPIRADO<br>
+        EN LA<br>
+        CULTURA<br>
+        ASIATICA<br>
+        DE<br>
+        HANOI<br>
+        EN<br>
+        LIMA
+    </div>
 
-            <!--
-            <section class="info-grid">
-                <div class="info-box quote-box">
-                    <h2>"A BRILLIANT<br>MIX OF<br>OLD HANOI<br>AND MODERN"</h2>
-                    <p>CARROLL DU CHATEAU</p>
-                </div>
-                <div class="info-box voucher-box">
-                    <h2>GIFT VOUCHERS<br>AVAILABLE</h2>
-                    <p>NOW<br>AVAILABLE</p>
-                </div>
-                <div class="info-box event-box">
-                    <h2>EVENT COMING UP?</h2>
-                    <p>WE OFFER PRIVATE DINING, CANAPÉ<br>FUNCTIONS, OUT CATERING AND MORE.</p>
-                    <span class="cta">FIND OUT MORE</span>
-                </div>
-                <div class="info-box"></div>
-            </section>
-        </main>
+    <div class="description-section">
+        <p>Bar Hanoi es un moderno restaurante vietnamita ubicado en una casona histórica de Magdalena, uno de los distritos más tradicionales de Lima.</p>
+        <p>El restaurante refleja nuestra pasión y respeto por la comida y cultura vietnamita.</p>
+        <p>Nuestro menú ofrece auténtica comida callejera de Hanoi que ha hecho famosa a la ciudad, y otros platos contemporáneos que fusionan las técnicas de cocina vietnamita tradicional con los mejores insumos peruanos.</p>
+        <p>Somos muy cuidadosos al elegir ingredientes que han sido obtenidos con un profundo respeto por el medio ambiente.</p>
+    </div>
+  </section>
+  <!-- Restaurant Photo -->  
+  <img src="img/3.jpg" alt="Restaurant interior" class="restaurant-photo">
 
-        -->
+</div>   
+</main>
+
+<!-- Footer -->
 
         <footer>
             <div class="footer">
                 <div class="signup-form">
                     <h3>Sign up</h3>
                     <input type="email" placeholder="Email Address">
-                    <p>Careers<br>Social</p>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#socialModal">Social</a>
                 </div>
+
+<!--modal redes-->
+<div class="modal fade" id="socialModal" tabindex="-1" aria-labelledby="socialModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+         <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <div class="modal-body text-center py-5">
+                <div class="row justify-content-center">
+                     <div class="col-6 text-center">
+                            <a href="https://www.facebook.com/" class="text-decoration-none">
+                                 <i class="bi bi-facebook fs-1 text-danger"></i>
+                            </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="https://www.instagram.com/" class="text-decoration-none">
+                        <i class="bi bi-instagram fs-1 text-danger"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
                 <div class="contact-info">
                     <p>Bar Hanoi is owned and operated by Comensa.<br>
                     Visit our other restaurants Ghost Street and Perch.</p>
                     
-                    <p>Ph: (09) 302 3478<br>
-                    Email: eat@cafehanoi.co.nz</p>
+                    <p>Telf: [número peruano]<br>
+                    Email: [email peruano]</p>
                     
-                    <p>Monday to Friday - 12pm - 3pm & 5pm 'til close<br>
-                    Saturday - 5 pm 'til close<br>
-                    Sunday - 5pm 'til close</p>
+                    <p>Lunes a Viernes - 12pm - 3pm & 5pm hasta el cierre<br>
+                    Sábado - 5pm hasta el cierre<br>
+                    Domingo - 5pm hasta el cierre</p>
                     
-                    <p>27 Galway Street, Britomart, Auckland<br>
-                    Find us halfway down Taawhiri Lane (accessible<br>
-                    from Galway Street)</p>
+                    <p>Explanada de la Costa Verde - Magdalena del Mar (Circuito de Playas)</p>
                     
                     <p><a href="#">View in Google Maps</a><br>
                     <a href="#">View Map</a></p>
@@ -135,11 +224,9 @@
     </div>
 
 
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
+    <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>

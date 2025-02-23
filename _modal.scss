@@ -1,0 +1,28 @@
+/* Estilos para el modal */
+.modal-content {
+  background-color: transparent !important;
+  border: #e31837;
+}
+
+.btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  filter: invert(1);
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.modal-body a {
+  color: #e31837;
+  font-size: 2rem;
+}
+
+.modal-body a:hover {
+  opacity: 0.8;
+}

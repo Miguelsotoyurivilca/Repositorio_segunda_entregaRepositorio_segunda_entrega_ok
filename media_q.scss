@@ -1,0 +1,44 @@
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1000px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+    .content-grid { /* flexbox para que el texto baje*/
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .footer {
+      grid-template-columns: 1fr;
+    }
+    .opening-hours {
+      font-size: 0.8rem;
+    }
+    .info-box {
+      padding: 1.5rem;
+    }
+    .quote-box h2,
+    .voucher-box h2,
+    .event-box h2 {
+      font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link {
+      padding: 0.25rem 0.5rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .navbar-nav .nav-link.active {
+      border-bottom: 2px solid #f3f3f3;
+    }
+    /* Contenido */
+    .description-section {
+      font-size: 0.9rem;
+    }
+    .title-section {
+      font-size: 2.5rem;
+    }
+  }
+  
+  
+  /*# sourceMappingURL=esilos.css.map */

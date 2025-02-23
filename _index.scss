@@ -1,0 +1,65 @@
+/*Content Grid Section-INDEX*/
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /*gap: 1px; Esta propiedad establece un espacio de 1 píxel entre los elementos de la cuadrícula, tanto horizontal como verticalmente.*/
+    background: var(--light-gray);
+    font-family: "Oswald", sans-serif;
+  }
+  
+  .info-grid p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .info-box {
+    padding: 2.5rem;/*ESPACIO HACIA ADENTRO*/
+  }
+  
+  .quote-box {
+    background: var(--light-gray);
+  }
+  
+  .quote-box h2 {
+    color: var(--primary-red);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .voucher-box {
+    background: var(--primary-red);
+    color: white;
+  }
+  
+  .voucher-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .voucher-box p {
+    color: var(--accent-yellow);
+  }
+  
+  .event-box {
+    background: var(--dark-gray);
+    color: white;
+  }
+  
+  .event-box p {
+    margin-top: 1rem;
+  }
+  
+  .event-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .event-box .cta {
+    color: var(--accent-yellow);
+    margin-top: 2rem;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  

@@ -1,0 +1,66 @@
+/* Page container */
+.page-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;/* tiene 3 lineas que ajustan su altura */
+    min-height: 100vh;/* Esta propiedad establece la altura mínima del contenedor */
+    
+  }
+  
+  .hero-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 90vh;
+    overflow: hidden;/* PARA QUE LA IMAGEN NO SE SALGA DE SUS BORDES */
+  }
+  
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* la imagen ajusta su apecto al ancho y alto especificados*/
+    animation-name: colores;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    z-index: 0;
+  }
+
+  @keyframes colores 
+    {
+    0%,100% 
+    {
+    filter: sepia(0.0) saturate(1.0);
+    }
+    30%
+    {
+    filter: sepia(0.0) saturate(0.0);
+    }
+    80%
+    {
+    filter: sepia(1.0) saturate(1.0);
+    }
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .hero-title {
+    font-size: 6rem;
+    color: var(--accent-yellow);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    font-family: "Oswald", sans-serif;
+  }
+  
+  .opening-hours {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }

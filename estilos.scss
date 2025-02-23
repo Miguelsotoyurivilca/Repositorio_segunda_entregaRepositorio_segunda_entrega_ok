@@ -1,0 +1,21 @@
+@charset "UTF-8";
+:root {
+  --primary-red: #e31837;
+  --accent-yellow: #ffff00;
+  --light-gray: #f5f5f5;
+  --dark-gray: #333333;
+  --footer-beige: #fff5e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import "navbar";
+@import "pagecontain";
+@import "index";
+@import "pag1";
+@import "footer";
+@import "media_q";
+@import "modal";

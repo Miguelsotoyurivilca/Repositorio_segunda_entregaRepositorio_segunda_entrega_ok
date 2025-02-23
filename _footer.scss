@@ -1,0 +1,38 @@
+/* Footer */
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 3rem;
+    background: var(--footer-beige);
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+  }
+  
+  .contact-info {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .contact-info p {
+    line-height: 1.6;
+  }
+  
+  .contact-info a {
+    color: var(--dark-gray);
+    text-decoration: none;
+  }
+  
+  .bottom-footer {
+    padding: 1rem;
+    text-align: center;
+    background: var(--footer-beige);
+    border-top: 1px solid #ddd;
+    font-size: 0.8rem;
+  }
+  

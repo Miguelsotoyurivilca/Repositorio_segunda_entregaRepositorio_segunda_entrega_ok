@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Pho Bo",
+        "descripcion": "Sopa vietnamita con fideos de arroz, carne de res y hierbas frescas.",
+        "precio": 10.99,
+        "imagen": "pho_bo.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Banh Mi",
+        "descripcion": "Sándwich vietnamita con pan crujiente, cerdo asado, vegetales y salsa especial.",
+        "precio": 7.99,
+        "imagen": "banh_mi.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Goi Cuon",
+        "descripcion": "Rollitos de papel de arroz rellenos de camarones, fideos y vegetales, acompañados de salsa de maní.",
+        "precio": 6.99,
+        "imagen": "goi_cuon.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Ca Phe Sua Da",
+        "descripcion": "Café vietnamita con leche condensada servido con hielo.",
+        "precio": 4.99,
+        "imagen": "ca_phe_sua_da.jpg"
+    }
+]
+
+
